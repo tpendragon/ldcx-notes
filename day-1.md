@@ -241,3 +241,63 @@ Controlled Vocabularies
 ------------------------
 
 How do we do them.
+
+SESSIONS
+============
+
+LDP Introduction
+-----------------
+
+1. W3C Technical Recommendation
+2. Same status as HTML/CSS/SVG/etc.
+3. Layer that sits on top of REST best practices, but focused on link data.
+4. Main goal is to have a REST API that follows best practices and works for
+   linked data.
+4. Fundamentals:
+  - Resources ( R in Rest)
+    - POST to create
+    - PUT to update
+    - DELETE
+    - PATCH (only the changes on resource)
+    - PUT (Replace the entire resource)
+    - Two types
+      - LDP-RS
+        - RDF Resources.
+        - RDF in some serialization.
+        - Should be able to give back at least TTL or JSON-LD
+      - LDP-NRS
+        - LDP Non-Rdf
+        - This is "anything"
+        - Server MAY create an LDP-RS when this is created.
+          - It creates a LINK header (describedBy) which points from LDP-NR to
+            LDP-RS
+  - Containers
+    - The question LDP tries to answer is what are the semantics of WHERE you do
+      these operations.
+    - Three types
+      - BasicContainer
+        - /images/
+        - If you request this it returns a list of its properties AND its
+          contents.
+        - There's a prefer header for "I only want properties" or "I only want
+          contents"
+      - DirectContainer
+        - Has a way to say "when you post a resource to me, you should also
+          manage another triple."
+        - Ex When I post a resource to /annotations/anno1/bodies/ it creates a 
+          triple <anno1: <hasBody> <x>
+        - Done via a property on the container that says membershipResource
+          /Anno1/ and memberRelation hasBody
+        - Can only have one membership relation.
+        - When you create the container you have to say what kind of container
+          it is.
+      - IndirectContainer
+        - Indirect containers let you automatically set a triple on another
+          resource to be <subject> <predicateDefinedInContainer> <objectFoundAsObjectInAnotherPredicateInResourceYouCreated>
+  - LD Paging
+    - Not in official spec - consensus was not reached.
+    - Will be published as a working group note.
+    - "I want to get N links back and page through"
+    - Server has control over where it breaks things up
+    - Client has PREFERENCES over how many items to return, but it's up to the
+      server.
