@@ -301,3 +301,64 @@ LDP Introduction
     - Server has control over where it breaks things up
     - Client has PREFERENCES over how many items to return, but it's up to the
       server.
+
+SPOTLIGHT
+---------------
+
+1. One of the big promises of spotlight was to build a self-service platform for
+   curators. NO developer access.
+2. Wants to be able to do this with content not in the repository.
+  - Let them upload items.
+3. Improve the look/feel/experience.
+4. Where we are
+  - What does it mean to install Spotlight?
+5. Request an Exhibit
+  - Form to fill out that provides a vanilla exhibit.
+6. Features
+  - Theme pages.
+  - Customizable text.
+  - Widgets
+  - iFrame Widget
+    - Recently did a 3D scan of their space.
+  - Browse Categories
+    - Saved searches provided with context
+
+Installation
+===
+1. Home page where you can edit front page text while logged in.
+2. Permissions to display/edit certain things in the admin dashboard.
+3. There's a base behavior with basic roles that you can change if you'd like.
+  - Application concern.
+4. Edit title/subtitle/description.
+5. Contact emails.
+6. Published - can hide the entire site.
+7. Import/Export. Can export JSON to get all the content to save it.
+8. Delete Exhibit
+  - If you don't have any exhibits it creates a blank barebones exhibit for you.
+9. Administer appearance
+  - Searchable
+    - Disable search for visitors.
+    - Disables facets
+  - Create site masthead
+    - Add an image for the top banner and scale it to give it more "pop"
+  - Site Thumbnail
+    - If someone tweets out the exhibit, the thumbnail goes in the twitter card.
+  - Configure tabs
+    - Change labels/reorder
+10. Tag documents and create searches from them.
+11. Configure sort dropdown.
+12. Modify which metadata fields show up where.
+  - Add fields that are only for items in your exhibit
+13. Admin interfaces for about/feature pages
+14. Create feature pages
+15. Can do searches and save it with an alias.
+  - You can then use these to browse.
+  - Browse categories let you change the look and feel of the site.
+  - Clicking an item within a browse category keeps the URL in there and changes
+    prev/next appropriately.
+16. Add repository item
+  - You implement so that it indexes things from your repository.
+17. Add non-repository item
+  - Lets you ingest items from outside of your repository.
+  - There's an edit mode
+18. ONE spotlight instance PER exhibit
